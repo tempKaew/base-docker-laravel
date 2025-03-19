@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "bmewburn.vscode-intelephense-client",
+    "mikestead.dotenv",
+    "DavidAnson.vscode-markdownlint",
+    "bierner.markdown-preview-github-styles"
+  ]
+}
