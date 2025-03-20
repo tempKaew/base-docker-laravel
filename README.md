@@ -15,7 +15,7 @@
 Clone ไปที่เครื่องของเรา:
 
 ```shell
-git clone <git@github.com>:tempKaew/base-docker-laravel
+git clone git@github.com:tempKaew/base-docker-laravel
 ```  
 
 ### Init the project
