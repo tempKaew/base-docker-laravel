@@ -1,18 +1,19 @@
 services:
-  # PHP-FPM
+  # Service PHP-FPM
   app:
     build: ./docker/php
     container_name: ${APP_SLUG_NAME}_php-fpm-app
     restart: unless-stopped
     volumes:
       - ./app:/app
+      - ./docker/php/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
     networks:
       - app-network
     depends_on:
-      - mariadb
+      - database
       - redis
 
-  # Nginx
+  # Service Nginx
   nginx:
     image: nginx:latest
     container_name: ${APP_SLUG_NAME}_nginx
@@ -28,8 +29,8 @@ services:
     depends_on:
       - app
 
-  # MariaDB
-  mariadb:
+  # Service MariaDB
+  database:
     image: mariadb:latest
     container_name: ${APP_SLUG_NAME}_mariadb
     restart: unless-stopped
@@ -46,7 +47,7 @@ services:
     ports:
       - ${MYSQL_PORT}:3306
 
-  # Redis
+  # Service Redis
   redis:
     image: redis:alpine
     container_name: ${APP_SLUG_NAME}_redis
