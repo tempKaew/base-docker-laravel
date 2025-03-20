@@ -10,6 +10,14 @@
 
 ## Getting Started
 
+### Clone the repository
+
+Clone ไปที่เครื่องของเรา:
+
+```shell
+git clone <git@github.com>:tempKaew/base-docker-laravel
+```  
+
 ### Init the project
 
 รันคำสั่ง init-project เพื่อเริ่มได้เลยครับ
